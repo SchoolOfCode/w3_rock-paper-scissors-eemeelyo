@@ -3,24 +3,26 @@
 
 function getWinner(playerMove, computerMove) {
   if (playerMove == "rock" && computerMove == "paper") {
-    console.log("Computer Wins!");
+    return -1;
   } else if (playerMove == "rock" && computerMove == "scissors") {
-    console.log("Player Wins!");
+    return 1;
   } else if (playerMove == "rock" && computerMove == "rock") {
-    console.log("Even -- Again!");
+    return 0;
   } else if (playerMove == "paper" && computerMove == "rock") {
-    console.log("Player Wins!");
+    return 1;
   } else if (playerMove == "paper" && computerMove == "scissors") {
-    console.log("Computer Wins!");
+    return -1;
   } else if (playerMove == "paper" && computerMove == "paper") {
-    console.log("Even -- Again!");
+    return 0;
   } else if (playerMove == "scissors" && computerMove == "paper") {
-    console.log("Player Wins!");
+    return 1;
   } else if (playerMove == "scissors" && computerMove == "rock") {
-    console.log("Computer Wins!");
+    return -1;
   } else if (playerMove == "scissors" && computerMove == "scissors") {
-    console.log("Even -- Again!");
+    return 0;
   }
 }
 
-let result = getWinner("rock", "paper");
+let playerChoice = prompt("What is your move?");
+let result = getWinner(playerChoice, "paper");
+alert(result);
