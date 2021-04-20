@@ -20,9 +20,26 @@ function getWinner(playerMove, computerMove) {
     return -1;
   } else if (playerMove == "scissors" && computerMove == "scissors") {
     return 0;
+  } else {
+    console.log("ERROR!");
   }
 }
 
-let playerChoice = prompt("What is your move?");
-let result = getWinner(playerChoice, "paper");
+function computerChoice() {
+  let randNum = Math.floor(Math.random() * 3 + 1);
+  // return randNum;
+  // console.log(rand);
+  if (randNum == 1) {
+    return "rock";
+  } else if (randNum == 2) {
+    return "paper";
+  } else {
+    return "scissors";
+  }
+}
+// console.log(computerChoice());
+
+// console.log(computerChoice);
+let playerChoice = prompt("Type rock, paper or scissors or you choice.");
+let result = getWinner(playerChoice, computerChoice());
 alert(result);
