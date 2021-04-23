@@ -3,7 +3,6 @@
 
 let playerScore = 0;
 let computerScore = 0;
-
 let stillPlaying = true;
 
 while (stillPlaying === true) {
@@ -57,20 +56,31 @@ while (stillPlaying === true) {
       return "paper";
     } else if (player == 3) {
       return "scissors";
+    } else if (player == 0) {
+      return false;
     } else {
       alert("Select only numbers 1, 2 or 3");
-      return player;
+      stillPlaying == false;
+      // return player;
     }
   }
 
   let result = getWinner(playerChoice(), computerChoice());
 
   if (result == -1) {
+    computerScore++;
     alert(result + " -You LOSE!");
+    alert(
+      "Player Score = " + playerScore + "\nComputer Score = " + computerScore
+    );
   } else if (result == 0) {
     alert(result + " -Draw");
   } else {
+    playerScore++;
     alert(result + " -You WIN!");
+    alert(
+      "PLayer Score = " + playerScore + "\nComputer Score = " + computerScore
+    );
   }
 
   function continuePlay() {

@@ -4,12 +4,52 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles.css" />
     <title>Rock, Paper, Scissors</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/55a775b96e.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <header>
-    <h1>Rock, Paper, Scissors</h1>
-  </header>
 
   <body>
-    <script src="main.js"></script>
+    <header>
+      <h1>Rock, Paper, Scissors</h1>
+    </header>
+
+    <section id="scores">
+      <div class="flex-container">
+        <div class="computerScore scoreLabel">
+          <h3 class="computerName">Computer: </h3>
+          <p>0</p>
+        </div>
+        <div class="gamesPlayed scoreLabel">
+          <h3 class="games">Games: </h3>
+          <p>0</p>
+        </div>
+        <div class="playersCore scoreLabel">
+          <h3 class="playerName">Player: </h3>
+          <p>0</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="playersHands">
+      <div class="flex-container">
+        <div class="computer">
+          <img src="./img/Left-Rock.png" alt="" class="leftHand" />
+        </div>
+        <div class="player"></div>
+          <img src="./img/Right-Rock.png" alt="" class="rightHand" />
+        </div>
+      </div>
+    </section>
+
+    <!-- <script src="main.js"></script> -->
   </body>
 </html>
