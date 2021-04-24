@@ -4,12 +4,32 @@ let playerScore = document.querySelector(".playerNumber");
 const rockButton = document.querySelector(".rockButton");
 const paperButton = document.querySelector(".paperButton");
 const scissorsButton = document.querySelector(".scissorsButton");
+const buttons = document.querySelector(".buttons");
 let stillPlaying = true;
 
-leftHand.addEventListener("click", function() {
-  leftHand.style.animation = "rotate-90-bl-ccw 0.7s steps(2)";
-  leftHand.style.webkitanimation = "rotate-90-bl-ccw";
-});
+function computerChoice() {
+  let randNum = Math.floor(Math.random() * 3 + 1);
+
+  if (randNum == 1) {
+    return "rock";
+  } else if (randNum == 2) {
+    return "paper";
+  } else {
+    return "scissors";
+  }
+}
+
+function playerChoice() {
+  if (rockButton) {
+    return "rock";
+  } else if (paperButton) {
+    return "paper";
+  } else if (scissorsButton) {
+    return "scissors";
+  }
+}
+
+buttons.addEventListener("click", computerChoice);
 
 function getWinner(playerMove, computerMove) {
   if (playerMove == "rock" && computerMove == "paper") {
@@ -35,62 +55,22 @@ function getWinner(playerMove, computerMove) {
   }
 }
 
-function computerChoice() {
-  let randNum = Math.floor(Math.random() * 3 + 1);
-
-  if (randNum == 1) {
-    return "rock";
-  } else if (randNum == 2) {
-    return "paper";
-  } else {
-    return "scissors";
-  }
-}
-
-function playerChoice() {
-  
-  );
-
-  if (player == 1) {
-    return "rock";
-  } else if (player == 2) {
-    return "paper";
-  } else if (player == 3) {
-    return "scissors";
-  } else if (player == 0) {
-    return false;
-  } else {
-    alert("Select only numbers 1, 2 or 3");
-    stillPlaying == false;
-    // return player;
-  }
-}
-
 let result = getWinner(playerChoice(), computerChoice());
 
 if (result == -1) {
   computerScore++;
-  alert(result + " -You LOSE!");
-  alert(
-    "Player Score = " + playerScore + "\nComputer Score = " + computerScore
-  );
 } else if (result == 0) {
-  alert(result + " -Draw");
 } else {
   playerScore++;
-  alert(result + " -You WIN!");
-  alert(
-    "PLayer Score = " + playerScore + "\nComputer Score = " + computerScore
-  );
 }
 
-function continuePlay() {
-  let r = confirm("Continue Playing?");
-  if (r == true) {
-  } else {
-    alert("Thank you for playing! Bye!");
-    stillPlaying = false;
-  }
-}
+// function continuePlay() {
+//   let r = confirm("Continue Playing?");
+//   if (r == true) {
+//   } else {
+//     alert("Thank you for playing! Bye!");
+//     stillPlaying = false;
+//   }
+// }
 
 continuePlay();
