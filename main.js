@@ -1,13 +1,15 @@
 let computerScore = document.querySelector(".computerNumber");
 let gamesPlayed = document.querySelector(".gamesNumber");
 let playerScore = document.querySelector(".playerNumber");
-const rockButton = document.querySelector(".rockButton");
-const paperButton = document.querySelector(".paperButton");
-const scissorsButton = document.querySelector(".scissorsButton");
+const rockButton = document.getElementById("rockButton");
+const paperButton = document.getElementById("paperButton");
+const scissorsButton = document.getElementById("scissorsButton");
 let buttons = document.querySelector(".buttons");
-let leftHand = document.querySelector(".leftHand");
-let rightHand = document.querySelector(".rightHand");
+let leftHand = document.getElementById("leftHand");
+let rightHand = document.getElementById("rightHand");
 let stillPlaying = true;
+// let playerMove = "Rock";
+// let computerMove = "Rock";
 
 function computerChoice() {
   let randNum = Math.floor(Math.random() * 3 + 1);
@@ -24,58 +26,101 @@ function computerChoice() {
   }
 }
 
-function changeHand() {}
+// function changeHand() {}
 
-function playerChoice() {
+// function playeMove() {
+//   let image = document.getElementById("rightHand");
+//   if (document.getElementById("rockButton")) {
+//     image.src = "./img/Right-Rock.png";
+//     return "rock";
+//   } else if (document.getElementById("paperButton")) {
+//     image.src = "./img/Right-Paper.png";
+//     return "paper";
+//   } else if (document.getElementById("scissorsButton")) {
+//     image.src = "./img/Right-Scissors.png";
+//     return "scissors";
+//   }
+// }
+
+rockButton.addEventListener("click", function () {
+  rightRock();
+  computerChoice();
+  return "rock";
+});
+
+paperButton.addEventListener("click", function () {
+  rightPaper();
+  computerChoice();
+  playeMove = "paper";
+});
+
+scissorsButton.addEventListener("click", function () {
+  rightScissors();
+  computerChoice();
+  playeMove = "scissors";
+});
+
+// console.log(rightRock);
+
+function rightRock() {
+  rightHand.src = "./img/Right-Rock.png";
+  // playerMove = "rock";
+}
+function rightPaper() {
+  rightHand.src = "./img/Right-Paper.png";
+}
+function rightScissors() {
+  rightHand.src = "./img/Right-Scissors.png";
+}
+
+function playeMove() {
   if (rockButton) {
     return "rock";
   } else if (paperButton) {
-    document.getElementById("rightHand").src = "./img/Right-Paper.png";
     return "paper";
-  } else if (scissorsButton) {
+  } else {
     return "scissors";
   }
 }
 
-paperButton.addEventListener("click", computerChoice);
-rockButton.addEventListener("click", computerChoice);
-scissorsButton.addEventListener("click", computerChoice);
+let playerMove = "rock";
+let computerMove = "paper";
 
-function getWinner(playerChoice, computerChoice) {
-  if (playerChoice == "rock" && computerChoice == "paper") {
-    return -1;
-  } else if (playerChoice == "rock" && computerChoice == "scissors") {
+function getWinner(playerMove, computerMove) {
+  if (playerMove == "rock" && computerMove == "paper") {
+    console.log("You LOSE!");
+  } else if (playerMove === "rock" && computerChoice == "scissors") {
     return 1;
-  } else if (playerChoice == "rock" && computerChoice == "rock") {
+  } else if (playeMove == "rock" && computerChoice == "rock") {
     return 0;
-  } else if (playerChoice == "paper" && computerChoice == "rock") {
+  } else if (paperButton && computerChoice == "rock") {
     return 1;
-  } else if (playerChoice == "paper" && computerChoice == "scissors") {
+  } else if (playeMove == "paper" && computerChoice == "scissors") {
     return -1;
-  } else if (playerChoice == "paper" && computerChoice == "paper") {
+  } else if (playeMove == "paper" && computerChoice == "paper") {
     return 0;
-  } else if (playerChoice == "scissors" && computerChoice == "paper") {
+  } else if (playeMove == "scissors" && computerChoice == "paper") {
     return 1;
-  } else if (playerChoice == "scissors" && computerChoice == "rock") {
+  } else if (playeMove == "scissors" && computerChoice == "rock") {
     return -1;
-  } else if (playerChoice == "scissors" && computerChoice == "scissors") {
+  } else if (playeMove == "scissors" && computerChoice == "scissors") {
     return 0;
   } else {
     console.log("ERROR!");
   }
 }
 
-let result = getWinner(playerChoice(), computerChoice());
+// let result = getWinner(playeMove(), computerChoice());
 
-if (result == -1) {
-  document.getElementById("gameResult").textContent = "You LOSE!";
-  computerScore += 1;
-} else if (result == 0) {
-  document.getElementById("gameResult").textContent = "DRAW!";
-} else {
-  document.getElementById("gameResult").textContent = "You WIN!";
-  playerScore++;
-}
+// if (result == -1) {
+//   document.getElementById("gameResult").innerHTML = "You LOSE!";
+//   computerScore += 1;
+// } else if (result == 0) {
+//   document.getElementById("gameResult").innerHTML = "DRAW!";
+// } else {
+//   document.getElementById("gameResult").innerHTML = "You WIN!";
+//   playerScore++;
+// }
 
 // function continuePlay() {
 //   let r = confirm("Continue Playing?");
@@ -86,4 +131,4 @@ if (result == -1) {
 //   }
 // }
 
-continuePlay();
+// continuePlay();

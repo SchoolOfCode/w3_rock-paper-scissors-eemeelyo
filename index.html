@@ -42,13 +42,13 @@
     <section id="choices">
       <div class="flex-container">
         <div class="rock choices">
-          <button class="rockButton buttons">Rock</button>
+          <input type="button" onclick="rightRock()" value="Rock" class="buttons" id="rockButton"></input>
         </div>
-        <div onclick="playerChoice()" class="paper choices">
-          <button class="paperButton buttons">Paper</button>
+        <div class="paper choices">
+          <input type="button" onclick="playerChoice()" value="Paper" class="buttons" id="paperButton"></input>
         </div>
         <div class="scissors choices">
-          <button class="scissorsButton buttons">Scissors</button>
+         <input type="button" onclick="rightScissors()" value="Scissors" class="buttons" id="scissorsButton"></input>
         </div>
       </div>
     </section>
@@ -62,10 +62,10 @@
     <section id="playersHands">
       <div class="flex-container">
         <div class="computer">
-          <img src="./img/Left-Rock.png" alt="" id="leftHand" />
+          <img src="./img/Left-Rock.png" alt="Computer Hand" id="leftHand" />
         </div>
         <div class="player">
-          <img src="./img/Right-Rock.png" alt="" id="rightHand" />
+          <img src="./img/Right-Rock.png" alt="player Hand" id="rightHand" />
         </div>
       </div>
     </section>
