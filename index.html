@@ -44,28 +44,28 @@
         <div class="rock choices">
           <button class="rockButton buttons">Rock</button>
         </div>
-        <div class="paper choices">
+        <div onclick="playerChoice()" class="paper choices">
           <button class="paperButton buttons">Paper</button>
         </div>
         <div class="scissors choices">
-          <button class="scissorsbutton buttons">Scissors</button>
+          <button class="scissorsButton buttons">Scissors</button>
         </div>
       </div>
     </section>
 
     <section id="winlose">
       <div class="flex-container">
-        <p id="winlose">Pick your hand!</p>
+        <p id="gameResult">Pick your hand!</p>
       </div>
     </section>
 
     <section id="playersHands">
       <div class="flex-container">
         <div class="computer">
-          <img src="./img/Left-Rock.png" alt="" class="leftHand" />
+          <img src="./img/Left-Rock.png" alt="" id="leftHand" />
         </div>
         <div class="player">
-          <img src="./img/Right-Rock.png" alt="" class="rightHand" />
+          <img src="./img/Right-Rock.png" alt="" id="rightHand" />
         </div>
       </div>
     </section>

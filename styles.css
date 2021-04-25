@@ -33,9 +33,6 @@ h1 {
   opacity: 0.8;
 }
 
-#playersHands {
-  margin: 50px 0 0 0;
-}
 .flex-container {
   display: flex;
   justify-content: center;
@@ -69,8 +66,9 @@ p {
   background-color: orange;
 }
 
-#winlose {
+p#gameResult {
   font-family: "Bungee Shade", cursive;
   color: white;
   font-size: 70px;
+  text-align: center;
 }
